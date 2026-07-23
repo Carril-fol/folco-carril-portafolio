@@ -10,17 +10,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Folco Carril Portafolio Developer",
+  title: "Folco Carril — Backend Developer",
   description: "An portafolio website for Folco Carril, a software developer.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className={spaceGrotesk.className}>
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
