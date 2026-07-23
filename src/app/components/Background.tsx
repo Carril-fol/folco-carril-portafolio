@@ -8,21 +8,25 @@ import { type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine
 import { loadSlim } from "@tsparticles/slim";
 
 const options: ISourceOptions = {
+    fullScreen: {
+        enable: true,
+        zIndex: -1,
+    },
     background: {
         color: {
-            value: "#2a2438",
+            value: "#1e1b2e",
         },
     },
     fpsLimit: 90,
     particles: {
         color: {
-            value: "#ffffff",
+            value: "#818cf8",
         },
         links: {
-            color: "#ffffff",
+            color: "#818cf8",
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.3,
             width: 0.5,
         },
         move: {
