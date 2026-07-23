@@ -37,7 +37,7 @@ const cloud: Technology[] = [
 export default function TechnologiesData() {
   return (
     <div className="flex flex-col gap-y-6">
-      <h2 className="text-2xl font-bold text-gray-800">Habilidades Técnicas</h2>
+      <h2 className="text-2xl font-bold text-[#e2e8f0]">Habilidades Técnicas</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <TechnologyCard icon={Code} name="Lenguajes" technologies={programingLanguages} />
