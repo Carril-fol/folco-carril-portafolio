@@ -6,6 +6,7 @@ interface Experiencie {
   nameCompany: string;
   description: string;
   technologies: string[];
+  url?: string;
 }
 
 const experiencies: Experiencie[] = [
@@ -13,8 +14,9 @@ const experiencies: Experiencie[] = [
     role: "Desarrollador FullStack",
     date: "Julio 2025 - Septiembre 2025",
     nameCompany: "Roberto Ottaviani",
-    description: "Aplicación orientada a optimizar el proceso de cotización de seguros. Permite registrar consultas de clientes y organizar la información para que el productor de seguros gestione las cotizaciones de forma más ágil y eficiente.",
-    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "PostgreSQL"]
+    description: "Sitio web para un productor de seguros profesional que presenta los servicios disponibles por categoría (particulares, profesionales y empresas) y cuenta con un formulario de contacto para que los clientes soliciten cotizaciones.",
+    technologies: ["TypeScript", "Next.js", "Tailwind CSS", "PostgreSQL"],
+    url: "https://www.ottaviani-seguros.com/",
   }
 ];
 
@@ -22,7 +24,7 @@ const experiencies: Experiencie[] = [
 export default function WorkExperienceData() {
   return (
     <div className="flex flex-col gap-y-5">
-      <h2 className="text-2xl font-bold text-gray-800 ">Experiencias Profesional</h2>
+      <h2 className="text-2xl font-bold text-[#e2e8f0]">Experiencias Profesional</h2>
 
       <div className="flex flex-col">
         {experiencies.map((experiencie, index) => (
@@ -33,6 +35,7 @@ export default function WorkExperienceData() {
             nameCompany={experiencie.nameCompany}
             description={experiencie.description}
             technologies={experiencie.technologies}
+            url={experiencie.url}
           />
         ))}
       </div>
