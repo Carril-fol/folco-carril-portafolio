@@ -16,14 +16,7 @@ const colleges: College[] = [
     nameInstitution: "Instituto de Formación Técnica Superior N°4",
     status: "Finalizando",
     date: "Marzo 2023 - Actualidad",
-  },
-  {
-    name: "Licenciatura en Tecnologías de la Información",
-    image: "/images/logo-up.webp",
-    nameInstitution: "Universidad de Palermo",
-    status: "Estudiando",
-    date: "Agosto 2026 - Actualidad",
-  },
+  }
 ];
 
 export default function CollegeData() {
