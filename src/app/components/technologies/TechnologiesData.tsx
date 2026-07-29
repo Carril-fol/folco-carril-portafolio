@@ -1,49 +1,30 @@
 "use client";
 
-import React, { type SVGProps } from "react";
-import { Code, Box, Database, Cloud } from "lucide-react";
-import { SiPython, SiPhp, SiTypescript, SiNextdotjs, SiFlask, SiDjango, SiPostgresql, SiMysql, SiMongodb, SiDocker, SiReact } from "react-icons/si";
-
+import { Code, Box, Database, Cloud, type LucideIcon } from "lucide-react";
 import TechnologyCard from "./TechnologyCard";
 
-interface Technology {
-  icon: React.FC<SVGProps<SVGSVGElement>>;
+interface TechCategory {
   name: string;
+  icon: LucideIcon;
+  technologies: string[];
 }
 
-const programingLanguages: Technology[] = [
-  { icon: SiPython, name: "Python" },
-  { icon: SiPhp, name: "PHP" },
-  { icon: SiTypescript, name: "TypeScript" },
-];
-
-const frameworks: Technology[] = [
-  { icon: SiNextdotjs, name: "Next.js" },
-  { icon: SiReact, name: "React" },
-  { icon: SiFlask, name: "Flask" },
-  { icon: SiDjango, name: "Django" }
-];
-
-const databases: Technology[] = [
-  { icon: SiPostgresql, name: "PostgreSQL" },
-  { icon: SiMysql, name: "MySQL" },
-  { icon: SiMongodb, name: "MongoDB" }
-];
-
-const cloud: Technology[] = [
-  { icon: SiDocker, name: "Docker" }
+const techCategories: TechCategory[] = [
+  { name: "Lenguajes", icon: Code, technologies: ["Python", "PHP", "TypeScript"] },
+  { name: "Frameworks", icon: Box, technologies: ["Next.js", "Flask", "FastAPI", "Django"] },
+  { name: "Bases de datos", icon: Database, technologies: ["PostgreSQL", "MySQL", "MongoDB"] },
+  { name: "Cloud", icon: Cloud, technologies: ["Docker"] },
 ];
 
 export default function TechnologiesData() {
   return (
     <div className="flex flex-col gap-y-6">
-      <h2 className="text-2xl font-bold text-[#e2e8f0]">Habilidades Técnicas</h2>
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">Habilidades Técnicas</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <TechnologyCard icon={Code} name="Lenguajes" technologies={programingLanguages} />
-        <TechnologyCard icon={Box} name="Frameworks" technologies={frameworks} />
-        <TechnologyCard icon={Database} name="Bases de datos" technologies={databases} />
-        <TechnologyCard icon={Cloud} name="Cloud" technologies={cloud} />
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        {techCategories.map((category) => (
+          <TechnologyCard key={category.name} {...category} />
+        ))}
       </div>
     </div>
   );

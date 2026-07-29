@@ -9,11 +9,30 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 });
 
+const siteUrl = "https://folcocarril.dev";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Folco Carril — Backend Developer",
-  description: "An portafolio website for Folco Carril, a software developer.",
+  description:
+    "Portafolio de Folco Carril, desarrollador back-end de Buenos Aires. Experiencia en Python, Flask, FastAPI, Next.js y APIs REST.",
   icons: {
     icon: "/icon.svg",
+  },
+  openGraph: {
+    title: "Folco Carril — Backend Developer",
+    description:
+      "Portafolio de Folco Carril, desarrollador back-end de Buenos Aires.",
+    url: siteUrl,
+    siteName: "Folco Carril",
+    locale: "es_AR",
+    type: "profile",
+  },
+  twitter: {
+    card: "summary",
+    title: "Folco Carril — Backend Developer",
+    description:
+      "Portafolio de Folco Carril, desarrollador back-end de Buenos Aires.",
   },
 };
 
@@ -21,7 +40,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
+    <html lang="es" className={spaceGrotesk.variable}>
       <body className={spaceGrotesk.className}>
         <Providers>{children}</Providers>
       </body>

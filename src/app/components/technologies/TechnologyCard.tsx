@@ -1,48 +1,50 @@
 "use client";
 
-import React, { type SVGProps } from "react";
+import { type LucideIcon } from "lucide-react";
+import { Technologies } from "@/app/components/common/Technonologies";
 import { Card, CardHeader, CardBody } from "@heroui/card";
-import { Chip } from "@heroui/chip";
-
-interface Technology {
-  icon: React.FC<SVGProps<SVGSVGElement>>;
-  name: string;
-}
 
 interface TechnologyCardProps {
-  icon: React.FC<SVGProps<SVGSVGElement>>;
   name: string;
-  technologies: Technology[];
+  icon: LucideIcon;
+  technologies: string[];
 }
 
-export default function TechnologyCard({ icon: Icon, name, technologies }: TechnologyCardProps) {
+export default function TechnologyCard({ name, icon: Icon, technologies }: TechnologyCardProps) {
   return (
     <Card
-      className="group flex flex-col gap-y-5 rounded-md border border-white/10 bg-[#1e1b2e]/60 p-4 shadow-md w-full h-full transition-all duration-300 hover:bg-indigo-950 hover:border-indigo-700/40 hover:shadow-xl hover:shadow-indigo-950/50"
+      className="
+        group flex flex-col
+        gap-y-5 rounded-md
+        border border-white/10
+        bg-zinc-800/30
+        p-4 shadow-md
+        w-full h-full
+        transition-all duration-300
+        hover:shadow-2xl
+        hover:shadow-indigo-900/50
+        hover:scale-[1.01]
+      "
       isHoverable={false}
     >
-      <CardHeader className="flex gap-x-5">
-        <div className="bg-indigo-950/70 rounded-sm p-2 transition-colors duration-300 group-hover:bg-indigo-800">
-          <Icon className="text-indigo-400 transition-colors duration-300 group-hover:text-indigo-300" />
+      <CardHeader className="flex items-center gap-x-3">
+        <div className="flex items-center justify-center rounded-md bg-indigo-950/60 p-2 transition-colors duration-300 group-hover:bg-indigo-500/20">
+          <Icon
+            className="h-5 w-5 text-indigo-300 transition-colors duration-300 group-hover:text-indigo-200"
+            aria-hidden="true"
+          />
         </div>
-        <div>
-          <h3 className="font-semibold text-balance text-[#e2e8f0] transition-colors duration-300 group-hover:text-white">{name}</h3>
-        </div>
+        <h3 className="font-semibold text-balance text-[#e2e8f0] transition-colors duration-300 group-hover:text-white">
+          {name}
+        </h3>
       </CardHeader>
+
       <CardBody className="flex justify-start items-start">
-        <ul className="flex flex-wrap gap-2">
-          {technologies.map((technology, index) => (
-            <li key={index}>
-              <Chip
-                key={index}
-                size="lg"
-                className="bg-indigo-900/40 text-indigo-300 rounded-md flex items-center px-2 transition-all duration-300 group-hover:bg-indigo-700/60 group-hover:text-indigo-200"
-              >
-                {technology.name}
-              </Chip>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-wrap gap-2">
+          <Technologies
+            technologies={technologies}
+          />
+        </div>
       </CardBody>
     </Card>
   );

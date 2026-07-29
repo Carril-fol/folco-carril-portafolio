@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import { Progress } from "@heroui/progress";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { type ISourceOptions, MoveDirection, OutMode } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
@@ -14,19 +13,19 @@ const options: ISourceOptions = {
     },
     background: {
         color: {
-            value: "#1e1b2e",
+            value: "#09090b",
         },
     },
     fpsLimit: 90,
     particles: {
         color: {
-            value: "#818cf8",
+            value: "#ffffff",
         },
         links: {
-            color: "#818cf8",
+            color: "#ffffff",
             distance: 150,
             enable: true,
-            opacity: 0.3,
+            opacity: 0.25,
             width: 0.5,
         },
         move: {
@@ -46,7 +45,7 @@ const options: ISourceOptions = {
             value: 80,
         },
         opacity: {
-            value: 0.5,
+            value: 0.35,
         },
         shape: {
             type: "circle",
@@ -56,7 +55,7 @@ const options: ISourceOptions = {
         },
     },
     detectRetina: true,
-}
+};
 
 export default function ParticlesBackground() {
     const [init, setInit] = useState(false);

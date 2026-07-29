@@ -11,15 +11,16 @@ export default function PersonalData() {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start w-full gap-y-4">
           {/* Left div with information */}
           <div className="flex gap-x-5">
+
             {/* Image profile*/}
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden shadow-md shrink-0">
+            {/* <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden shadow-md shrink-0">
               <Image
                 src="/images/profile.webp"
                 alt="Foto de perfil Folco Carril"
                 fill
                 className="object-cover"
               />
-            </div>
+            </div> */}
 
             {/* Name and social medias */}
             <div className="flex flex-col">
@@ -28,8 +29,8 @@ export default function PersonalData() {
                   <h1 className="text-2xl sm:text-4xl font-bold text-[#e2e8f0] tracking-tight">
                     Folco Carril
                   </h1>
-                  <span className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/25">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/25">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
                     Disponible
                   </span>
                 </div>

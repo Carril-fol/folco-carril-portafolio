@@ -24,7 +24,19 @@ export default function CollegeCard({
   return (
     <Card
       key={key}
-      className="group flex flex-col gap-y-5 rounded-md border border-white/10 bg-[#1e1b2e]/60 p-4 shadow-md w-full h-full transition-all duration-300 hover:bg-white-950 hover:border-indigo-700/40 hover:shadow-xl hover:shadow-indigo-950/50"
+      className="
+        group flex flex-col
+        gap-y-5 rounded-md border
+        border-white/10
+        bg-zinc-800/30 p-4
+        shadow-md w-full h-full
+        transition-all duration-300
+        hover:bg-white-950
+        hover:border-indigo-700/40
+        hover:shadow-xl
+        hover:shadow-indigo-950/50
+        hover:scale-[1.01]
+      "
       isHoverable={false}
     >
       <CardHeader className="flex gap-x-5">

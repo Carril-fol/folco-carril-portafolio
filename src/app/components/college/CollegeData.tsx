@@ -22,7 +22,7 @@ const colleges: College[] = [
 export default function CollegeData() {
   return (
     <div className="flex flex-col gap-y-5">
-      <h2 className="text-2xl font-bold text-[#e2e8f0]">Formación Academica</h2>
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">Formación Academica</h2>
 
       <div className="flex flex-col gap-y-4">
         {colleges.map((college, index) => (

@@ -24,7 +24,7 @@ const experiencies: Experiencie[] = [
 export default function WorkExperienceData() {
   return (
     <div className="flex flex-col gap-y-5">
-      <h2 className="text-2xl font-bold text-[#e2e8f0]">Experiencias Profesional</h2>
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">Experiencias Profesional</h2>
 
       <div className="flex flex-col">
         {experiencies.map((experiencie, index) => (
