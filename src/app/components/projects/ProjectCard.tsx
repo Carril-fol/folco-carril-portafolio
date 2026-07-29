@@ -65,16 +65,6 @@ export const ProjectCard = ({
         <div className="mt-auto flex flex-wrap gap-2">
           <Technologies
             technologies={technologies}
-            className="
-              bg-indigo-900/40
-              text-indigo-300
-              rounded-md
-              flex items-center
-              px-2 transition-all
-              duration-300
-              group-hover:bg-indigo-700/60
-              group-hover:text-indigo-200
-            "
           />
         </div>
       </CardBody>
