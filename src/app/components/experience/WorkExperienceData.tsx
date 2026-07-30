@@ -21,23 +21,29 @@ const experiencies: Experiencie[] = [
 ];
 
 
+function showWorkExperience(experiencies: Experiencie[]) {
+  return (
+    experiencies.map((experiencie, index) => (
+      <WorkExperienceCard
+        key={index}
+        role={experiencie.role}
+        date={experiencie.date}
+        nameCompany={experiencie.nameCompany}
+        description={experiencie.description}
+        technologies={experiencie.technologies}
+        url={experiencie.url}
+      />
+    ))
+  );
+}
+
 export default function WorkExperienceData() {
   return (
     <div className="flex flex-col gap-y-5">
       <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-400 bg-clip-text text-transparent">Experiencias Profesional</h2>
 
       <div className="flex flex-col">
-        {experiencies.map((experiencie, index) => (
-          <WorkExperienceCard
-            key={index}
-            role={experiencie.role}
-            date={experiencie.date}
-            nameCompany={experiencie.nameCompany}
-            description={experiencie.description}
-            technologies={experiencie.technologies}
-            url={experiencie.url}
-          />
-        ))}
+        {showWorkExperience(experiencies)}
       </div>
     </div>
   );
